@@ -31,4 +31,18 @@ Game where you compete with your frinds in coding challange.
 
 ## Tasks
 
-- Spring boot security auth with email upgrade.
+- Front end design.
+  - Deciding colors
+  - Logo
+  * Typography
+  * Theme
+
+* Spring boot security auth with email upgrade.
+
+* Building API's (define apis needed)
+
+* Question scraping
+
+* Design pointing system
+
+* Client server architecture, turn game into online
