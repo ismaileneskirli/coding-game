@@ -10,6 +10,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+//oguzhan
 @EnableWebMvc
 @EnableSwagger2
 @SpringBootApplication
