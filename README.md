@@ -38,7 +38,7 @@ Game where you compete with your frinds in coding challange.
   * Theme
 
 * React Architecture
-  ![alt text] https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.bezkoder.com%2Fspring-boot-react-jwt-auth%2F&psig=AOvVaw0FzhlolsQvt-FSPREnQMYc&ust=1629845521125000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCJCu3-ydyPICFQAAAAAdAAAAABAD
+  ![alt text] https://bezkoder.com/wp-content/uploads/2020/08/react-redux-jwt-authentication-token-example-project-overview.png
 
   - App -> includes state
 
