@@ -37,10 +37,18 @@ Game where you compete with your frinds in coding challange.
   * Typography
   * Theme
 
-* React Architecture
+* React Architecture for Login and User Pages
+
   !['Login Architecture'](https://bezkoder.com/wp-content/uploads/2020/08/react-redux-jwt-authentication-token-example-project-overview.png)
 
-  - App -> includes state
+  - App -> includes state for loggedIn, and User
+
+  * if loggedIn hook is not True then render Login and register components (Formik Forms)
+
+    - Auth with user api, axios , if authenticated set user hook.
+    - if not authenticated alert
+
+  * if loggenIn hook is True then render Profile and home components with user parameters.
 
 * Spring boot security auth with email upgrade.
 
