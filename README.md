@@ -38,7 +38,7 @@ Game where you compete with your frinds in coding challange.
   * Theme
 
 * React Architecture
-  ![alt text] (https://bezkoder.com/wp-content/uploads/2020/08/react-redux-jwt-authentication-token-example-project-overview.png)
+  !['Login Architecture'](https://bezkoder.com/wp-content/uploads/2020/08/react-redux-jwt-authentication-token-example-project-overview.png)
 
   - App -> includes state
 
