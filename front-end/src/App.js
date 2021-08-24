@@ -1,109 +1,60 @@
 import "./App.css";
-import { Formik } from "formik";
-import * as Yup from "yup";
+import Register from "components/Register";
+import { useState, useEffect } from "react";
+import Home from "components/Home";
+import LoginForm from "./components/LoginForm";
+import UserService from "services/userService";
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState({
+    name: "",
+    password: "",
+    points: 0,
+    wins: 0,
+    loses: 0,
+  });
+  const [error, setError] = useState("");
+
+  //pass function as parameter to child component
+  const Login = (user) => {
+    console.log(user);
+
+    let userService = new UserService();
+    userService.getByUserName(user.name).then((result) => {
+      if (
+        user.name == result.data.name &&
+        user.password == result.data.password
+      ) {
+        console.log("logged in");
+        setUser({
+          name: result.data.name,
+          password: result.data.password,
+          points: result.data.points,
+          wins: result.data.wins,
+          loses: result.data.loses,
+        });
+        setIsLoggedIn(true);
+      } else {
+        console.log("Wrong credentials");
+        setError("Wrong credentials");
+      }
+    });
+  };
+
+  const Logout = () => {
+    setIsLoggedIn(false);
+    setUser({ name: "", password: "", points: 0, wins: 0, loses: 0 });
+  };
+  //
+
   return (
-    <div className="container">
-      <div className="brand-box">
-        <h1>Coding Game</h1>
-        <br></br>
-        <p>
-          {" "}
-          Improve your skills by challenging your friends, or training by
-          yourself.
-        </p>
-      </div>
-      <div className="magic-form">
-        <Formik
-          initialValues={{
-            name: "",
-            email: "",
-            password: "",
-            agreement: false,
-          }}
-          validationSchema={Yup.object({
-            //hangi state neye benzemeli
-            name: Yup.string().required(),
-            email: Yup.string().email().required("email cant be empty"),
-            password: Yup.string()
-              .required("No password provided.")
-              .min(8, "Password is too short - should be 8 chars minimum."),
-
-            agreement: Yup.boolean().required(
-              "You need to accept terms of agreement"
-            ),
-          })}
-          onSubmit={(values, { resetForm, setSubmitting }) => {
-            console.log(values);
-            setTimeout(() => {
-              resetForm();
-              setSubmitting(false);
-            }, 2000);
-          }}
-        >
-          {({
-            values,
-            errors,
-            handleChange,
-            handleSubmit,
-            handleReset,
-            dirty,
-            isSubmitting,
-          }) => (
-            <form onSubmit={handleSubmit}>
-              <h3>Sign Up</h3>
-              <br></br>
-              <label htmlFor="name">Name</label>
-              <input
-                id="name"
-                type="text"
-                placeholder="Your name"
-                className="input"
-                value={values.name}
-                onChange={handleChange}
-              ></input>
-
-              <label htmlFor="email">Email</label>
-              <input
-                id="email"
-                type="text"
-                placeholder="Your email"
-                className="input"
-                value={values.email}
-                onChange={handleChange}
-              ></input>
-
-              <label htmlFor="password">Password</label>
-              <input
-                id="password"
-                type="text"
-                placeholder="Your password"
-                className="input"
-                value={values.password}
-                onChange={handleChange}
-              ></input>
-
-              <div className="checkbox">
-                <input
-                  id="agreement"
-                  type="checkbox"
-                  value={values.agreement}
-                  onChange={handleChange}
-                ></input>
-                <label htmlFor="agreement" className="checkbox-label">
-                  I read the terms of agreement and i accept it
-                </label>
-              </div>
-
-              <button type="submit" disabled={!dirty || isSubmitting}>
-                {" "}
-                Sign Up
-              </button>
-            </form>
-          )}
-        </Formik>
-      </div>
+    <div className="App">
+      {isLoggedIn ? (
+        <Home user={user} Logout={Logout} />
+      ) : (
+        <LoginForm Login={Login} error={error} />
+      )}
     </div>
   );
 }

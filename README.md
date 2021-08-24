@@ -6,20 +6,15 @@ Game where you compete with your frinds in coding challange.
 
 ## 1 : Model a SQL Database : Entities in Coding game
 
-### Questions
+### questions
 
-- id (int-pk)
+- id (int-pk, auto increment)
 - queestion_text (nvarchar)
-- difficulty (int)
-- category_id (int-fk)
-- correct_answer
+- difficulty (int 0-1-2)
+- category_name (string : linux)
+- correct_answer (string)
 
-### Categories
-
-- id (pk)
-- category_name
-
-### Users
+### users
 
 - id
 - name
@@ -29,6 +24,7 @@ Game where you compete with your frinds in coding challange.
 - win
 - lose
 - (maybe) fav_lang
+- isValid (default false)
 
 ## React Architecture for Login and User Pages
 
@@ -45,24 +41,30 @@ Game where you compete with your frinds in coding challange.
 
 ## TODOS
 
-- Front end design.
+- [x] Login page for user, welcoming page with user's name, win rate, games played.
+
+- [] Question scraping for different categories, difficulty levels.
+
+  - 5 questions for Linux 1,2 level
+  - 5 questions for DevOps 0 level
+  - 5 questions for Java 2 level
+
+  * Other possible categories : Python, React, Kafka, Docker Commands, Algorithm
+
+- [] Building API's (define apis needed)
+  - Get question by category and difficulty, Example usage :getByCategoryAndDifficulty("Linux",2)
+  - External quiz api (https://quizapi.io/)
+
+* [] Front end design.
   - Deciding colors (green-black ?)
   - Logo
   * Typography (decide font)
   * Theme (uigradients)
   * icons in sign in, signup pages
+  * brand name
 
-* Spring boot security auth with email upgrade.
+- [] Spring boot security auth with email upgrade.(oguzhan)
 
-* Building API's (define apis needed)
+- [] Client server architecture, turn game into online (for later)
 
-  - Get question by category and difficulty
-  - External quiz api (https://quizapi.io/)
-
-* Question scraping
-
-* Design pointing system
-
-* Client server architecture, turn game into online
-
-* Login page for user, welcoming page with user's name, win rate, games played.
+- [] Design matching system (for later)

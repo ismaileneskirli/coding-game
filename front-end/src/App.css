@@ -4,17 +4,34 @@
   margin: 70px auto;
   display: flex;
   border-radius: 10px;
-  background: #3a36e4; /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #032c1c, #011813);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #032f1e, #02241d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
+.error-message{
+  color:  red;
 
+}
 h1 {
   font-size: 55px;
   letter-spacing: 2px;
   font-family: 'Montserrat', sans-serif;
   margin-bottom:1em
+}
+.questions{
+  color:aliceblue;
+}
+h3{
+  font-size: 35px;
+  letter-spacing: 2px;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom:  1em;
+  color: #fff;
+}
+
+.title {
+  color: #fff;
+
 }
 
 .brand-box {
@@ -34,7 +51,8 @@ h1 {
   padding: 40px 70px;
   font-size: 23px;
   color: #3f3f40;
-  background: #fff;
+  background: -webkit-linear-gradient(to left, #032c1c, #011813);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #032f1e, #02241d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
@@ -63,6 +81,11 @@ input:focus {
 .checkbox {
   display: flex;
   align-items: center;
+
+}
+
+.tick{
+  margin-right: 3px;
 }
 
 .checkbox-label {
@@ -76,11 +99,10 @@ button {
   padding: 8px 12px;
   border-style: none;
   border-radius: 5px;
-  background-color: #185a9d;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  background-color: #06af0f;
   font-size: 17px;
   font-weight: 500;
-  color: #fff;
+  color: rgb(255, 255, 255);
   cursor: pointer;
   outline: none;
 }
