@@ -28,6 +28,7 @@ Game where you compete with your frinds in coding challange.
 - points
 - win
 - lose
+- (maybe) fav_lang
 
 ## React Architecture for Login and User Pages
 
@@ -48,7 +49,8 @@ Game where you compete with your frinds in coding challange.
   - Deciding colors (green-black ?)
   - Logo
   * Typography (decide font)
-  * Theme
+  * Theme (uigradients)
+  * icons in sign in, signup pages
 
 * Spring boot security auth with email upgrade.
 
