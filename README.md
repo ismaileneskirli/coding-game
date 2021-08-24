@@ -1,6 +1,8 @@
 # coding-game
 
 Game where you compete with your frinds in coding challange.
+Front end of our project has been moved to another repository, please go :
+https://github.com/ismaileneskirli/coding-game-frontend
 
 # TASKs
 
